@@ -269,7 +269,18 @@ main {
 }
 
 .post {
+  --post-text: 48rem;
+  --post-wide: 56rem;
+  --post-toc: 14rem;
   padding-block: var(--space-2xl) var(--space-3xl);
+}
+
+.post__head,
+.post__body,
+.post__foot {
+  width: 100%;
+  max-width: var(--post-text);
+  margin-inline: auto;
 }
 
 .post__head {
@@ -302,7 +313,8 @@ main {
 }
 
 .post__cover {
-  margin: var(--space-xl) 0 0;
+  max-width: var(--post-wide);
+  margin: var(--space-xl) auto 0;
   border: var(--rule-heavy) solid var(--color-ink);
 }
 
@@ -359,13 +371,23 @@ main {
   color: var(--color-ink-2);
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 84rem) {
   .post--toc .post__body {
-    grid-template-columns: 14rem minmax(0, var(--measure));
-    column-gap: var(--space-3xl);
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr) minmax(0, var(--post-text)) minmax(0, 1fr);
+    column-gap: var(--space-xl);
+  }
+
+  .post--toc .prose {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .post--toc .toc {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: end;
+    width: min(100%, var(--post-toc));
     position: sticky;
     top: var(--space-lg);
     align-self: start;
@@ -377,20 +399,9 @@ main {
 .post__foot {
   display: grid;
   gap: var(--space-lg);
-  max-width: var(--measure);
   margin-top: var(--space-2xl);
   padding-top: var(--space-lg);
   border-top: var(--rule-heavy) solid var(--color-rule);
-}
-
-.post--toc .post__foot {
-  margin-left: 0;
-}
-
-@media (min-width: 75rem) {
-  .post--toc .post__foot {
-    margin-left: calc(14rem + var(--space-3xl));
-  }
 }
 
 .post__signoff {
@@ -399,6 +410,31 @@ main {
   font-size: var(--text-xs);
   letter-spacing: 0.02em;
   color: var(--color-muted);
+}
+
+.post__author {
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.post__profiles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(--space-lg);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.post__profiles a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  white-space: nowrap;
 }
 
 .post__more {

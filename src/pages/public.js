@@ -1,7 +1,7 @@
 import { mediaPath } from "../media.js";
 import { readTags } from "../posts.js";
 import { escapeHtml } from "../render/markdown.js";
-import { SITE, absoluteUrl, page } from "./layout.js";
+import { PROFILES, SITE, absoluteUrl, linkList, page } from "./layout.js";
 
 const dateFormat = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 
@@ -89,7 +89,10 @@ ${rendered.html}
     </div>
   </div>
   <footer class="post__foot">
-    <p class="post__signoff">Written by ${escapeHtml(SITE.author)}${post.published_at ? `, ${formatDate(post.published_at)}` : ""}.</p>
+    <div class="post__author">
+      <p class="post__signoff">Written by ${escapeHtml(SITE.author)}${post.published_at ? `, ${formatDate(post.published_at)}` : ""}.</p>
+      ${linkList("post__profiles", PROFILES, `${SITE.author} elsewhere`)}
+    </div>
     ${tagList(tags)}
     <p class="post__more"><a class="btn" href="/">More posts</a><a class="post__rss" href="/rss.xml">Follow via RSS</a></p>
   </footer>
@@ -112,7 +115,7 @@ ${rendered.html}
       description,
       datePublished: post.published_at,
       dateModified: post.updated_at,
-      author: { "@type": "Person", name: SITE.author, url: SITE.home },
+      author: { "@type": "Person", name: SITE.author, url: SITE.home, sameAs: [SITE.github, SITE.linkedin] },
       mainEntityOfPage: absoluteUrl(env, canonicalPath),
       image: absoluteUrl(env, cover ?? "/og-default.png"),
       keywords: tags.join(", ") || undefined,

@@ -89,6 +89,15 @@ describe("post detail", () => {
     expect(body).not.toMatch(/<script>(?!<\/script>)/);
   });
 
+  it("links the author's profiles below the post, in the site footer and in JSON-LD", async () => {
+    await insertPost({ slug: "profiles", published_at: day(5) });
+    const { body } = await text("/profiles");
+    const profiles = '<li><a href="https://github.com/xaverric">GitHub</a></li><li><a href="https://www.linkedin.com/in/jilek-daniel/">LinkedIn</a></li><li><a href="https://buymeacoffee.com/xaverric">Buy me a coffee</a></li>';
+    expect(body).toContain(`<ul class="post__profiles" aria-label="Daniel Jílek elsewhere">${profiles}</ul>`);
+    expect(body).toMatch(new RegExp(`<footer class="mast">[\\s\\S]*<li><a href="https://xaverric.cz">xaverric.cz</a></li>${profiles.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}</ul>`));
+    expect(body).toContain('"sameAs":["https://github.com/xaverric","https://www.linkedin.com/in/jilek-daniel/"]');
+  });
+
   it("re-renders stale HTML lazily and stores it", async () => {
     const post = await insertPost({ slug: "stale", body_md: "==new==", body_html: "<p>old</p>", html_version: "0.old" });
     const { body } = await text("/stale");

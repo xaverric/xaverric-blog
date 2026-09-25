@@ -6,8 +6,21 @@ export const SITE = {
   description: "Technical writing by Daniel Jílek: software, systems and the tools around them.",
   language: "en",
   github: "https://github.com/xaverric",
+  linkedin: "https://www.linkedin.com/in/jilek-daniel/",
+  coffee: "https://buymeacoffee.com/xaverric",
   home: "https://xaverric.cz",
 };
+
+export const PROFILES = [
+  ["GitHub", SITE.github],
+  ["LinkedIn", SITE.linkedin],
+  ["Buy me a coffee", SITE.coffee],
+];
+
+const FOOTER_LINKS = [["RSS", "/rss.xml"], ["Atom", "/atom.xml"], ["JSON Feed", "/feed.json"], ["xaverric.cz", SITE.home], ...PROFILES];
+
+export const linkList = (className, links, label) =>
+  `<ul class="${className}"${label ? ` aria-label="${escapeHtml(label)}"` : ""}>${links.map(([text, href]) => `<li><a href="${escapeHtml(href)}">${escapeHtml(text)}</a></li>`).join("")}</ul>`;
 
 const STYLES = ["/css/tokens.css", "/css/base.css", "/css/site.css", "/css/prose.css"];
 
@@ -53,13 +66,7 @@ export const slabNav = (current) => `<header class="slab">
 export const mastFooter = () => `<footer class="mast">
   <p class="mast__mark">xaverric/blog</p>
   <p class="mast__line">Written by ${escapeHtml(SITE.author)}. Software, systems and the tools around them.</p>
-  <ul class="mast__links">
-    <li><a href="/rss.xml">RSS</a></li>
-    <li><a href="/atom.xml">Atom</a></li>
-    <li><a href="/feed.json">JSON Feed</a></li>
-    <li><a href="${SITE.home}">xaverric.cz</a></li>
-    <li><a href="${SITE.github}">GitHub</a></li>
-  </ul>
+  ${linkList("mast__links", FOOTER_LINKS)}
 </footer>`;
 
 export const page = (env, { title, description, canonicalPath, current, body, robots, image, type, publishedAt, updatedAt, scripts = ["/build/site.js"], jsonLd }) => {
