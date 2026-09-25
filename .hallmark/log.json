@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026-09-25",
+    "macrostructure": "Long Document",
+    "theme": "custom",
+    "theme_axes": "light / display-heavy / chromatic-yellow",
+    "vibe": "raw paper, heavy ink, one signal yellow",
+    "genre": "editorial",
+    "nav": "N7 Brutal slab",
+    "footer": "Ft1 Mast-headed",
+    "enrichment": "none",
+    "palette": {
+      "paper": "oklch(97.2% 0.008 95)",
+      "ink": "oklch(17% 0.012 95)",
+      "accent": "oklch(89% 0.17 100)",
+      "paperDark": "oklch(16.5% 0.01 95)",
+      "inkDark": "oklch(94% 0.01 95)",
+      "accentDark": "oklch(86% 0.15 100)"
+    },
+    "fonts": { "display": "Bricolage Grotesque 800 (wdth 78)", "body": "Newsreader (optical size)", "mono": "JetBrains Mono" },
+    "brief": "blog.xaverric.cz - brutalist long-form technical blog with a ledger overview and a calm brutal admin editor"
+  }
+]

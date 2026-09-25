@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+.dev.vars
+public/build/
+*.log
+.DS_Store
+coverage/
+.idea/

@@ -1,0 +1,220 @@
+/* Hallmark · macrostructure: Long Document · tone: brutalist · anchor hue: 95 (signal yellow)
+ * theme: custom · vibe: "raw paper, heavy ink, one signal yellow" · paper: oklch(97.2% 0.008 95) · accent: oklch(89% 0.17 100)
+ * display: Bricolage Grotesque 800 / wdth 78 · body: Newsreader · mono: JetBrains Mono · axes: light / display-heavy / chromatic-yellow
+ * nav: N7 Brutal slab · footer: Ft1 Mast-headed · enrichment: none · studied: no · context: user-provided
+ */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  src: url("/fonts/Bricolage-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  font-stretch: 75% 100%;
+  src: url("/fonts/Bricolage-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/Newsreader-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/Newsreader-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/Newsreader-Italic-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Newsreader";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("/fonts/Newsreader-Italic-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url("/fonts/JetBrainsMono-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url("/fonts/JetBrainsMono-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  color-scheme: light dark;
+
+  --color-paper: oklch(97.2% 0.008 95);
+  --color-paper-2: oklch(94.2% 0.011 95);
+  --color-paper-3: oklch(90.5% 0.013 95);
+  --color-ink: oklch(17% 0.012 95);
+  --color-ink-2: oklch(26% 0.012 95);
+  --color-neutral: oklch(36% 0.012 95);
+  --color-muted: oklch(44% 0.012 95);
+  --color-rule: oklch(17% 0.012 95);
+  --color-rule-soft: oklch(82% 0.012 95);
+  --color-accent: oklch(89% 0.17 100);
+  --color-accent-2: oklch(84% 0.17 98);
+  --color-accent-ink: oklch(17% 0.012 95);
+  --color-focus: oklch(17% 0.012 95);
+  --color-focus-halo: oklch(89% 0.17 100);
+  --color-added-bg: oklch(90% 0.08 150);
+  --color-added-ink: oklch(30% 0.09 150);
+  --color-removed-bg: oklch(91% 0.055 25);
+  --color-removed-ink: oklch(40% 0.14 25);
+  --color-danger: oklch(50% 0.19 27);
+  --color-danger-bg: oklch(93% 0.04 27);
+  --color-ok: oklch(42% 0.11 150);
+  --color-note: oklch(45% 0.12 250);
+  --color-tip: oklch(42% 0.11 150);
+  --color-warn: oklch(47% 0.12 70);
+  --color-shadow: oklch(17% 0.012 95);
+  --color-scrim: oklch(17% 0.012 95 / 0.55);
+
+  --code-bg: oklch(19.5% 0.012 95);
+  --code-bar: oklch(24% 0.012 95);
+  --code-ink: oklch(93% 0.01 95);
+  --code-muted: oklch(67% 0.015 95);
+  --code-keyword: oklch(88% 0.16 100);
+  --code-string: oklch(82% 0.12 150);
+  --code-number: oklch(80% 0.12 60);
+  --code-title: oklch(82% 0.09 230);
+  --code-attr: oklch(83% 0.09 300);
+  --code-meta: oklch(76% 0.05 95);
+  --code-added: oklch(32% 0.07 150);
+  --code-removed: oklch(32% 0.08 25);
+
+  --font-display: "Bricolage Grotesque", ui-sans-serif, sans-serif;
+  --font-body: "Newsreader", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-ui: "Bricolage Grotesque", ui-sans-serif, sans-serif;
+
+  --display-weight: 800;
+  --display-stretch: 78%;
+  --tracking-display: -0.022em;
+  --tracking-label: 0.08em;
+
+  --text-2xs: 0.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-body: clamp(1.125rem, 0.3vw + 1.05rem, 1.3125rem);
+  --text-md: 1.25rem;
+  --text-lg: clamp(1.375rem, 0.8vw + 1.1rem, 1.75rem);
+  --text-xl: clamp(1.75rem, 1.6vw + 1.2rem, 2.5rem);
+  --text-2xl: clamp(2rem, 2.6vw + 1.2rem, 3.25rem);
+  --text-display-s: clamp(2.25rem, 3.6vw + 1rem, 4rem);
+  --text-display: clamp(2.75rem, 5.4vw + 1rem, 5.75rem);
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.15;
+  --lh-body: 1.62;
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --measure: 66ch;
+  --page-max: 84rem;
+  --bar-height: 3.5rem;
+  --gutter: clamp(1rem, 4vw, 3rem);
+
+  --rule-heavy: 3px;
+  --rule-mid: 2px;
+  --rule-thin: 1px;
+  --radius: 0;
+  --shadow-hard: 4px 4px 0 var(--color-shadow);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 90ms;
+  --dur-short: 160ms;
+  --dur-long: 320ms;
+
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-paper: oklch(16.5% 0.01 95);
+    --color-paper-2: oklch(20.5% 0.012 95);
+    --color-paper-3: oklch(25% 0.013 95);
+    --color-ink: oklch(94% 0.01 95);
+    --color-ink-2: oklch(88% 0.011 95);
+    --color-neutral: oklch(80% 0.012 95);
+    --color-muted: oklch(72% 0.012 95);
+    --color-rule: oklch(94% 0.01 95);
+    --color-rule-soft: oklch(33% 0.012 95);
+    --color-accent: oklch(86% 0.15 100);
+    --color-accent-2: oklch(80% 0.15 98);
+    --color-accent-ink: oklch(17% 0.012 95);
+    --color-focus: oklch(94% 0.01 95);
+    --color-focus-halo: oklch(86% 0.15 100);
+    --color-added-bg: oklch(34% 0.07 150);
+    --color-added-ink: oklch(90% 0.08 150);
+    --color-removed-bg: oklch(34% 0.07 25);
+    --color-removed-ink: oklch(88% 0.07 25);
+    --color-danger: oklch(72% 0.15 27);
+    --color-danger-bg: oklch(28% 0.06 27);
+    --color-ok: oklch(78% 0.12 150);
+    --color-note: oklch(76% 0.1 250);
+    --color-tip: oklch(78% 0.12 150);
+    --color-warn: oklch(82% 0.12 80);
+    --color-shadow: oklch(86% 0.15 100);
+    --color-scrim: oklch(8% 0.01 95 / 0.7);
+
+    --code-bg: oklch(21% 0.012 95);
+    --code-bar: oklch(25.5% 0.013 95);
+  }
+}
