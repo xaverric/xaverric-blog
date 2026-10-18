@@ -16,7 +16,8 @@
     "db:migrate:local": "wrangler d1 migrations apply xaverric-blog --local"
   },
   "overrides": {
-    "sharp": "0.35.4"
+    "sharp": "0.35.5",
+    "undici": "7.30.1"
   },
   "dependencies": {
     "highlight.js": "^11.12.0",
@@ -25,7 +26,7 @@
     "marked-footnote": "^1.4.0"
   },
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.22.0",
+    "@cloudflare/vitest-pool-workers": "^0.23.0",
     "@codemirror/commands": "^6.11.1",
     "@codemirror/lang-markdown": "^6.5.2",
     "@codemirror/language": "^6.12.4",
@@ -53,6 +54,6 @@
     "happy-dom": "^20.14.5",
     "mermaid": "^11.17.2",
     "vitest": "4.1.11",
-    "wrangler": "^4.139.0"
+    "wrangler": "^4.151.1"
   }
 }
